@@ -7,18 +7,18 @@
   box-sizing: border-box;
   /* 设置移动端点击高亮背景色  去掉就设置为透明颜色即可*/
   -webkit-tap-highlight-color: transparent;
-  /* 设置文字允许字体小于12px; */
+  /* 设置文字允许字体小于0.12rem; */
   -webkit-text-size-adjust: none;
   /* 防止文字的锯齿样式 */
   -webkit-font-smoothing: antialiased;
 }
 html {
-  font-size: 26.66667vm;
+  font-size: 26.6667vw;
 }
 /* 给body设置字体默认样式 */
 body {
   background: #fff;
-  font-size: 14px;
+  font-size: 0.14rem;
   font-family: -apple-system, Helvetica, sans-serif;
   line-height: 1.5;
 }
@@ -42,14 +42,95 @@ i {
   font-style: normal;
 }
 .bt {
-  border-top: 1px solid #ccc;
+  border-top: 0.01rem solid #ccc;
 }
 .bb {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 0.01rem solid #ccc;
 }
 .bl {
-  border-left: 1px solid #ccc;
+  border-left: 0.01rem solid #ccc;
 }
 .br {
-  border-right: 1px solid #ccc;
+  border-right: 0.01rem solid #ccc;
+}
+#header {
+  position: fixed;
+  /*定位会脱标,不会默认宽度100%,由内容撑开,
+      如果需求宽度100%,要手动设置*/
+  width: 100%;
+  height: 0.4rem;
+  /* 弹性布局 */
+  display: flex;
+  z-index: 2;
+}
+#header .left {
+  width: 0.8rem;
+  height: 100%;
+  /*弹性布局,主轴X 居中,副轴Y 居中*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .left a {
+  width: 0.58rem;
+  height: 0.21rem;
+  background: url(../images/sprites.png) 0 -1.1rem;
+  /*图片都是两倍,背景图也不例外都需要缩小*/
+  background-size: 2rem 2rem;
+  display: block;
+}
+#header .center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+#header .center form {
+  width: 100%;
+  position: relative;
+}
+#header .center form .icon-search {
+  width: 0.21rem;
+  height: 0.21rem;
+  background: url(../images/sprites.png) -0.58rem -1.1rem;
+  background-size: 2rem 2rem;
+  position: absolute;
+  top: 0.06rem;
+  left: 0.05rem;
+}
+#header .center form input {
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 0.15rem;
+  padding-left: 0.3rem;
+}
+#header .right {
+  width: 0.5rem;
+  height: 100%;
+}
+#header .right > a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  line-height: 0.45rem;
+}
+/* 公共底部区域样式*/
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+#footer ul {
+  display: flex;
+}
+#footer ul li {
+  width: 25%;
+}
+#footer ul li a {
+  display: block;
+  text-align: center;
+}
+#footer ul li a img {
+  width: 0.65rem;
 }

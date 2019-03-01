@@ -1,76 +1,6 @@
 /*导入base样式文件*/
 @import 'base.less';
 
-// 头部样式
-#header {
-    position: fixed;
-    /*定位会脱标,不会默认宽度100%,由内容撑开,
-      如果需求宽度100%,要手动设置*/
-    width: 100%;
-    height: 40px;
-    /* 弹性布局 */
-    display: flex;
-    z-index: 2;
-    .left {
-        width: 80px;
-        height: 100%;
-        /*弹性布局,主轴X 居中,副轴Y 居中*/
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        a {
-            width: 58px;
-            height: 21px;
-            background: url(../images/sprites.png) 0 -110px;
-            /*图片都是两倍,背景图也不例外都需要缩小*/
-            background-size: 200px 200px;
-            display: block;
-        }
-    }
-
-    .center {
-        flex: 1;
-        display: flex;
-        align-items: center;
-
-        form {
-            width: 100%;
-            position: relative;
-
-            .icon-search {
-                width: 21px;
-                height: 21px;
-                background: url(../images/sprites.png) -58px -110px;
-                background-size: 200px 200px;
-                position: absolute;
-                top: 6px;
-                left: 5px;
-            }
-
-            input {
-                width: 100%;
-                height: 30px;
-                border-radius: 15px;
-                padding-left: 30px;
-            }
-        }
-
-    }
-
-    .right {
-        width: 50px;
-        height: 100%;
-
-        >a {
-            display: block;
-            color: #fff;
-            text-align: center;
-            line-height: 45px;
-        }
-    }
-}
-
 /*轮播图样式*/
 #slide {
     
@@ -100,14 +30,14 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding: 6px 0;
+                padding: 0.06rem 0;
 
                 img {
-                    width: 40px;
+                    width: 0.4rem;
                 }
 
                 p {
-                    margin-top: 5px;
+                    margin-top: 0.05rem;
                 }
             }
 
@@ -118,41 +48,41 @@
 #main{
     //背景色
     background-color: #eee;
-    padding: 0 10px;
-    padding-bottom: 60px;
+    padding: 0 0.1rem;
+    padding-bottom: 0.6rem;
     //包含塌陷问题
     overflow: hidden;
-    // margin-bottom: 50px;
+    // margin-bottom: 0.5rem;
     
     //秒杀样式
     .skill{
         /* 兄弟之间的使用margin  但是第一个元素上面没有兄弟 参照父元素就会塌陷*/
-        margin-top: 10px;
+        margin-top: 0.1rem;
         background-color: #fff;
         .title{
             display: flex;
             justify-content: space-between;
-            line-height: 30px;
+            line-height: 0.3rem;
             .left{
                 display: flex;
                 .seckill-icon{
-                    width: 20px;
-                    height: 25px;
-                    margin-left: 5px;
+                    width: 0.2rem;
+                    height: 0.25rem;
+                    margin-left: 0.05rem;
                 }
                 .seckill-name{
-                    margin-left: 5px;
+                    margin-left: 0.05rem;
                     color: @main-color;
                 }
                 .seckill-downtime{
-                    margin-left: 5px;
+                    margin-left: 0.05rem;
 
                     span:not(:nth-child(3n)){
                         display: inline-block;
-                        width: 15px;
-                        height: 15px;
+                        width: 0.15rem;
+                        height: 0.15rem;
                         background-color: #000;
-                        line-height: 15px;
+                        line-height: 0.15rem;
                         color: #fff;
                         text-align: center;
                     }
@@ -160,7 +90,7 @@
             }
             .right{
                 .seckill-more{
-                    margin-right: 10px;
+                    margin-right: 0.1rem;
                 }
             }
         }
@@ -174,11 +104,11 @@
                         display: block;
                         text-align: center;
                         img{
-                            width: 110px;
+                            width: 1.1rem;
                         }
                         p{
                             color: @main-color;
-                            font-size: 12px;
+                            font-size: 0.12rem;
                             del{
                                 color: #ccc;
                             }
@@ -189,7 +119,7 @@
                 // li:not(:first-child){
                 // ~表示相邻后面的所有兄弟 而且满足后面这个选择器 第一li后面所有兄弟li
                 li~li{
-                    border-left: 1px solid #ccc;
+                    border-left: 0.01rem solid #ccc;
                 }
             }
         }
@@ -198,23 +128,23 @@
 
     //超市样式
     .market{
-        margin-top: 10px;
+        margin-top: 0.1rem;
         background-color: #fff;
         .title{
-            border-bottom: 1px solid #ccc;
+            border-bottom: 0.01rem solid #ccc;
             >h4{
-                line-height: 30px;
+                line-height: 0.3rem;
                 font-weight: normal;
-                padding-left: 30px;
+                padding-left: 0.3rem;
                 position: relative;
             }
             h4::before{
                 content: '';
                 position: absolute;
-                height: 14px;
-                width: 4px;
-                top: 7px;
-                left: 20px;
+                height: 0.14rem;
+                width: 0.04rem;
+                top: 0.07rem;
+                left: 0.2rem;
                 background-color: @main-color;
             }
         }
@@ -243,24 +173,3 @@
     }
 }
 
-/* 底部区域样式*/
-#footer{
-    ul{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        display: flex;
-        li{
-            width: 25%;
-            a{
-                display: block;
-                text-align: center;
-                img{
-                    width: 65px;
-                }
-            }
-        }
-    }
-} 
