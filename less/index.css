@@ -1,0 +1,126 @@
+/*导入base样式文件*/
+/* 方便开发使用* 上线的时候把常见有间距标签改一下就好了 */
+* {
+  margin: 0;
+  padding: 0;
+  /* 给所有元素设置这个盒模型属性为了让盒模型的和设置的宽度一样 
+   因为移动端做全屏页面宽度100% 如果因为边框或者padding导致超出范围出现滚动条不利于用户体验 */
+  box-sizing: border-box;
+  /* 设置移动端点击高亮背景色  去掉就设置为透明颜色即可*/
+  -webkit-tap-highlight-color: transparent;
+  /* 设置文字允许字体小于12px; */
+  -webkit-text-size-adjust: none;
+  /* 防止文字的锯齿样式 */
+  -webkit-font-smoothing: antialiased;
+}
+/* 给body设置字体默认样式 */
+body {
+  background: #fff;
+  font-size: 14px;
+  font-family: -apple-system, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+li {
+  list-style: none;
+}
+input {
+  border: 0;
+  outline: none;
+}
+img {
+  /* 解决图片底部3px间隙问题 */
+  vertical-align: middle;
+}
+i {
+  /* 去掉斜体 */
+  font-style: normal;
+}
+#header {
+  position: fixed;
+  /*定位会脱标,不会默认宽度100%,由内容撑开,
+      如果需求宽度100%,要手动设置*/
+  width: 100%;
+  height: 40px;
+  /* 弹性布局 */
+  display: flex;
+}
+#header .left {
+  width: 80px;
+  height: 100%;
+  /*弹性布局,主轴X 居中,副轴Y 居中*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .left a {
+  width: 58px;
+  height: 21px;
+  background: url(../images/sprites.png) 0 -110px;
+  /*图片都是两倍,背景图也不例外都需要缩小*/
+  background-size: 200px 200px;
+  display: block;
+}
+#header .center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+#header .center form {
+  width: 100%;
+  position: relative;
+}
+#header .center form .icon-search {
+  width: 21px;
+  height: 21px;
+  background: url(../images/sprites.png) -58px -110px;
+  background-size: 200px 200px;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+}
+#header .center form input {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 30px;
+}
+#header .right {
+  width: 50px;
+  height: 100%;
+}
+#header .right > a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+}
+/*轮播图样式*/
+#slide img {
+  width: 100%;
+}
+/*导航区域样式*/
+#nav ul {
+  /*弹性布局*/
+  display: flex;
+  flex-wrap: wrap;
+}
+#nav ul li {
+  width: 25%;
+}
+#nav ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0;
+}
+#nav ul li a img {
+  width: 40px;
+}
+#nav ul li a p {
+  margin-top: 5px;
+}
