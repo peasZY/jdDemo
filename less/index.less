@@ -10,7 +10,7 @@
     height: 40px;
     /* 弹性布局 */
     display: flex;
-
+    z-index: 2;
     .left {
         width: 80px;
         height: 100%;
@@ -73,8 +73,12 @@
 
 /*轮播图样式*/
 #slide {
-    img {
+    
+    img{
         width: 100%;
+    } 
+    .swiper-pagination-bullet-active{
+        background-color: @main-color;
     }
 }
 
@@ -110,3 +114,153 @@
         }
     }
 }
+/*主体区域样式*/
+#main{
+    //背景色
+    background-color: #eee;
+    padding: 0 10px;
+    padding-bottom: 60px;
+    //包含塌陷问题
+    overflow: hidden;
+    // margin-bottom: 50px;
+    
+    //秒杀样式
+    .skill{
+        /* 兄弟之间的使用margin  但是第一个元素上面没有兄弟 参照父元素就会塌陷*/
+        margin-top: 10px;
+        background-color: #fff;
+        .title{
+            display: flex;
+            justify-content: space-between;
+            line-height: 30px;
+            .left{
+                display: flex;
+                .seckill-icon{
+                    width: 20px;
+                    height: 25px;
+                    margin-left: 5px;
+                }
+                .seckill-name{
+                    margin-left: 5px;
+                    color: @main-color;
+                }
+                .seckill-downtime{
+                    margin-left: 5px;
+
+                    span:not(:nth-child(3n)){
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        background-color: #000;
+                        line-height: 15px;
+                        color: #fff;
+                        text-align: center;
+                    }
+                }
+            }
+            .right{
+                .seckill-more{
+                    margin-right: 10px;
+                }
+            }
+        }
+        .content{
+            ul{
+                display: flex;
+                li{
+                    flex: 1;
+                    a{
+                        // 保证a标签的宽度和高度
+                        display: block;
+                        text-align: center;
+                        img{
+                            width: 110px;
+                        }
+                        p{
+                            color: @main-color;
+                            font-size: 12px;
+                            del{
+                                color: #ccc;
+                            }
+                        }
+                    }
+                }
+                // li:nth-child(n+2){
+                // li:not(:first-child){
+                // ~表示相邻后面的所有兄弟 而且满足后面这个选择器 第一li后面所有兄弟li
+                li~li{
+                    border-left: 1px solid #ccc;
+                }
+            }
+        }
+        
+    }
+
+    //超市样式
+    .market{
+        margin-top: 10px;
+        background-color: #fff;
+        .title{
+            border-bottom: 1px solid #ccc;
+            >h4{
+                line-height: 30px;
+                font-weight: normal;
+                padding-left: 30px;
+                position: relative;
+            }
+            h4::before{
+                content: '';
+                position: absolute;
+                height: 14px;
+                width: 4px;
+                top: 7px;
+                left: 20px;
+                background-color: @main-color;
+            }
+        }
+        .content{
+            display: flex;
+            .left{
+                width: 50%;
+                a{
+                    display: block;
+                    img{
+                        width: 100%;
+                    }
+                }
+                
+            }
+            .right{
+                width: 50%;
+                a{
+                    display: block;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 底部区域样式*/
+#footer{
+    ul{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        li{
+            width: 25%;
+            a{
+                display: block;
+                text-align: center;
+                img{
+                    width: 65px;
+                }
+            }
+        }
+    }
+} 

@@ -12,6 +12,9 @@
   /* 防止文字的锯齿样式 */
   -webkit-font-smoothing: antialiased;
 }
+html {
+  font-size: 26.66667vm;
+}
 /* 给body设置字体默认样式 */
 body {
   background: #fff;
@@ -37,4 +40,16 @@ img {
 i {
   /* 去掉斜体 */
   font-style: normal;
+}
+.bt {
+  border-top: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
 }

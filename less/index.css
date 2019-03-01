@@ -39,6 +39,18 @@ i {
   /* 去掉斜体 */
   font-style: normal;
 }
+.bt {
+  border-top: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
 #header {
   position: fixed;
   /*定位会脱标,不会默认宽度100%,由内容撑开,
@@ -47,6 +59,7 @@ i {
   height: 40px;
   /* 弹性布局 */
   display: flex;
+  z-index: 2;
 }
 #header .left {
   width: 80px;
@@ -102,6 +115,9 @@ i {
 #slide img {
   width: 100%;
 }
+#slide .swiper-pagination-bullet-active {
+  background-color: #e93b3d;
+}
 /*导航区域样式*/
 #nav ul {
   /*弹性布局*/
@@ -123,4 +139,133 @@ i {
 }
 #nav ul li a p {
   margin-top: 5px;
+}
+/*主体区域样式*/
+#main {
+  background-color: #eee;
+  padding: 0 10px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+#main .skill {
+  /* 兄弟之间的使用margin  但是第一个元素上面没有兄弟 参照父元素就会塌陷*/
+  margin-top: 10px;
+  background-color: #fff;
+}
+#main .skill .title {
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+}
+#main .skill .title .left {
+  display: flex;
+}
+#main .skill .title .left .seckill-icon {
+  width: 20px;
+  height: 25px;
+  margin-left: 5px;
+}
+#main .skill .title .left .seckill-name {
+  margin-left: 5px;
+  color: #e93b3d;
+}
+#main .skill .title .left .seckill-downtime {
+  margin-left: 5px;
+}
+#main .skill .title .left .seckill-downtime span:not(:nth-child(3n)) {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  line-height: 15px;
+  color: #fff;
+  text-align: center;
+}
+#main .skill .title .right .seckill-more {
+  margin-right: 10px;
+}
+#main .skill .content ul {
+  display: flex;
+}
+#main .skill .content ul li {
+  flex: 1;
+}
+#main .skill .content ul li a {
+  display: block;
+  text-align: center;
+}
+#main .skill .content ul li a img {
+  width: 110px;
+}
+#main .skill .content ul li a p {
+  color: #e93b3d;
+  font-size: 12px;
+}
+#main .skill .content ul li a p del {
+  color: #ccc;
+}
+#main .skill .content ul li ~ li {
+  border-left: 1px solid #ccc;
+}
+#main .market {
+  margin-top: 10px;
+  background-color: #fff;
+}
+#main .market .title {
+  border-bottom: 1px solid #ccc;
+}
+#main .market .title > h4 {
+  line-height: 30px;
+  font-weight: normal;
+  padding-left: 30px;
+  position: relative;
+}
+#main .market .title h4::before {
+  content: '';
+  position: absolute;
+  height: 14px;
+  width: 4px;
+  top: 7px;
+  left: 20px;
+  background-color: #e93b3d;
+}
+#main .market .content {
+  display: flex;
+}
+#main .market .content .left {
+  width: 50%;
+}
+#main .market .content .left a {
+  display: block;
+}
+#main .market .content .left a img {
+  width: 100%;
+}
+#main .market .content .right {
+  width: 50%;
+}
+#main .market .content .right a {
+  display: block;
+}
+#main .market .content .right a img {
+  width: 100%;
+}
+/* 底部区域样式*/
+#footer ul {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+}
+#footer ul li {
+  width: 25%;
+}
+#footer ul li a {
+  display: block;
+  text-align: center;
+}
+#footer ul li a img {
+  width: 65px;
 }
